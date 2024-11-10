@@ -1,27 +1,30 @@
-body{
+body {
     margin: 0;
     padding: 0;
     font-family: 'casual';
 }
-.navbar{
+
+.navbar {
     position: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
     flex-wrap: wrap;
-    background: linear-gradient(to bottom, #ffffff 0%, rgba(196, 196, 196, 0) 100%);
+    background: linear-gradient(to bottom, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
     width: 100%;
-    height: 70px;
+    height: 100px;
     z-index: 1;
 }
-.nav{
+
+.nav {
     display: flex;
     justify-content: right;
     list-style: none;
     margin-right: 15%;
 }
-.logo{
+
+.logo {
     flex: 1 1 auto;
     margin-left: 10%;
     text-transform: uppercase;
@@ -29,25 +32,31 @@ body{
     font-weight: bold;
     font-size: 35px;
 }
-a{
+
+a {
     margin: 15px;
     color: #000;
     text-decoration: none;
     text-transform: uppercase;
 }
-a:hover{
+
+a:hover {
     color: #000;
 }
-.banner-area{
+
+.banner-area {
     position: relative;
     background-image: url(1.jpg);
     width: 100%;
-    height: 100vh;
+    height: 150vh;
     background-repeat: no-repeat;
-    -webkit-background-size: cover;
     background-size: cover;
 }
-.about-area, .port-area, .Blog-area, .contact-area{
+
+.about-area,
+.port-area,
+.Blog-area,
+.contact-area {
     position: relative;
     display: flex;
     justify-content: space-around;
@@ -55,27 +64,68 @@ a:hover{
     flex-wrap: wrap;
     flex-direction: row;
     width: 100%;
-    height: 700px;
+    height: 550px;
+    background-repeat: no-repeat;
+    background-size: contain; /* 改为 contain，使图片完整显示 */
+    background-position: center; /* 居中显示图片 */
 }
-.text-part{
-    width: 65%;
+
+/* 其他区域的背景图片保持不变 */
+.about-area {
+    background-image: url(2.jpg);
+}
+
+.port-area {
+    background-image: url(3.jpg);
+}
+
+.Blog-area {
+    background-image: url(4.jpg);
+}
+
+.contact-area {
+    background-image: url(5.jpg);
+}
+
+
+/* 添加占位伪元素来解决跳转位置问题 */
+.about-area::before,
+.port-area::before,
+.Blog-area::before,
+.contact-area::before {
+    content: '';
+    display: block;
+    height: 100px; /* 导航栏的高度 */
+    margin-top: -100px; /* 抵消高度，确保跳转到正确位置 */
+}
+
+.text-part {
+    padding-left: 40px;
+    width: 90%;
     height: 80%;
 }
-h1{
+
+h1 {
     font-size: 50px;
     font-family: "Champagne & Limousines";
 }
-p{
+
+p {
     font-size: 24px;
     line-height: 50px;
 }
-.about-area, .Blog-area{
-    background: #fefefe;
+
+.about-area,
+.Blog-area {
+    background-color: #fefefe; /* 保留为后备颜色 */
 }
-.port-area, .contact-area{
-    background: #262626;
+
+.port-area,
+.contact-area {
+    background-color: #262626; /* 保留为后备颜色 */
     color: #fff;
 }
-html{
+
+html {
     scroll-behavior: smooth;
 }
