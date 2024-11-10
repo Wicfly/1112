@@ -6,41 +6,62 @@
     <title>wicfly</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+<!-- 添加背景音乐 -->
+    <audio id="bg-music" autoplay loop>
+        <source src="tt.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        // 延迟1秒播放背景音乐
+        window.onload = function() {
+            setTimeout(function() {
+                let audio = document.getElementById('bg-music');
+                audio.play().then(() => {
+                    console.log('音乐已自动播放');
+                }).catch(function(error) {
+                    console.log('无法自动播放，需用户进一步交互:', error);
+                });
+            }, 1000); // 1000毫秒=1秒
+        };
+    </script>
+
     <div class="navbar">
         <a href="#" class="logo">Houpu Wang</a>
         <ul class="nav">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#Blog">blogs</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#Sorry">Sorry</a></li>
+            <li><a href="#Sally">Sally</a></li>
+            <li><a href="#I still">I still</a></li>
+            <li><a href="#Love you">Love you</a></li>
+            <li><a href="#The most">The most</a></li>
         </ul>
     </div>
-    <div class="banner-area" id="home"></div>
-        <div class="text-part">
-            <h1>About Area</h1>
-            <p>this is just an example, this paragraph means nothing, I just randomly write something on it?</p>
-        </div>
-    <div class="about-area" id="about"></div>
-        <div class="text-part">
-            <h1>About Area</h1>
-            <p>this is just an example, this paragraph means nothing, I just randomly write something on it?</p>
-        </div>
-    <div class="port-area" id="portfolio"></div>
-        <div class="text-part">
-            <h1>About Area</h1>
-            <p>this is just an example, this paragraph means nothing, I just randomly write something on it?</p>
-        </div>
-    <div class="Blog-area" id="blogs"></div>
-        <div class="text-part">
-            <h1>About Area</h1>
-            <p>this is just an example, this paragraph means nothing, I just randomly write something on it?</p>
-        </div>
-    <div class="contact-area" id="contact"></div>
-        <div class="text-part">
-            <h1>About Area</h1>
-            <p>this is just an example, this paragraph means nothing, I just randomly write something on it?</p>
-        </div>
+    <div class="banner-area" id="Sorry"></div>
+    <div class="text-part">
+        <h1>Sorry</h1>
+        <p>I will change my bad habits, I won’t bring up topics that will make you unhappy anymore. I don’t want to cause you any pressure. I won’t be self-centered anymore.</p>
+    </div>
+    <div class="about-area" id="Sally"></div>
+    <div class="text-part">
+        <h1>Sally</h1>
+        <p>I remember when we were in Central Park together at the beginning of the semester... I was staring at this bouquet of flowers and I was so lost in thought. I couldn't help but think of your smiling face, and the time when you ate the food I cooked. I was so happy at that time. I remembered when we were together in Chinatown. Haha, I was really jealous. I admit it. I remember you trying different hats in front of me. I remember you grinning with that gold chain in the Halloween costume store. I was really worried when you didn't come to class that Friday. I really wanted to see you at that time. You said that I only asked you out when I wanted to play with you, but that wasn't true. I also remember that I was at Taco Bell and you went to get Starbucks. You were walking on the road and I was so cute that I couldn't help but take out my phone to take a photo, and you found me. Haha. Of course, I will always remember that sunset in Brooklyn. I hope time will always be frozen at that moment.</p>
+    </div>
+    <div class="port-area" id="I still"></div>
+    <div class="text-part">
+        <h1>I Still</h1>
+        <p>I am no longer the same person I used to be. I really care about you and I am willing to change everything for you.</p>
+    </div>
+    <div class="Blog-area" id="Love you"></div>
+    <div class="text-part">
+        <h1>Love you</h1>
+        <p>I am a very naive little boy, but my sincerity towards you is absolute. I just want you to be happy.</p>
+    </div>
+    <div class="contact-area" id="The most"></div>
+    <div class="text-part">
+        <h1>The most</h1>
+        <p>Would you forgive me...?</p>
+    </div>
 </body>
 </html>
