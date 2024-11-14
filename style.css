@@ -1,7 +1,13 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'casual';
+    font-family: 'Champagne & Limousines';
+    background-color: #dfdfdf; /* 设置背景颜色为浅灰色 */
+}
+
+/* 设置为 normal 来去掉加粗 */
+.custom-header {
+    font-weight: normal; /* 设置为 normal 来去掉加粗 */
 }
 
 .navbar {
@@ -21,12 +27,12 @@ body {
     display: flex;
     justify-content: right;
     list-style: none;
-    margin-right: 15%;
+    margin-right: 5%;
 }
 
 .logo {
     flex: 1 1 auto;
-    margin-left: 10%;
+    margin-left: 5%;
     text-transform: uppercase;
     letter-spacing: 1px;
     font-weight: bold;
@@ -35,58 +41,72 @@ body {
 
 a {
     margin: 15px;
-    color: #000;
+    color: #000000;
     text-decoration: none;
     text-transform: uppercase;
 }
 
 a:hover {
-    color: #000;
+    color: #c2c2c2;
 }
 
+/* Banner 区域：背景图片和文字排版 */
 .banner-area {
     position: relative;
-    background-image: url(1.jpg);
-    width: 100%;
-    height: 150vh;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.about-area,
-.port-area,
-.Blog-area,
-.contact-area {
-    position: relative;
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-    flex-direction: row;
+    justify-content: flex-start; /* 保证图片在左边 */
+    align-items: center; /* 垂直居中对齐 */
     width: 100%;
-    height: 550px;
-    background-repeat: no-repeat;
-    background-size: contain; /* 改为 contain，使图片完整显示 */
-    background-position: center; /* 居中显示图片 */
+    height: 100vh; /* 占满屏幕高度 */
+    background-color: #dfdfdf; /* 设置背景色为浅灰色 */
 }
 
-/* 其他区域的背景图片保持不变 */
-.about-area {
-    background-image: url(2.jpg);
+/* 背景图片 */
+.background-image {
+    position: absolute;
+    margin-top: 10px;
+    padding-left: 10%;
+    width: 22%;
+    height: auto;
+    object-fit: cover;
+    z-index: 1; /* 背景图片位于最底层 */
+    transition: opacity 0.3s ease; /* 增加平滑过渡效果 */
 }
 
-.port-area {
-    background-image: url(3.jpg);
+/* 内容部分：人物图片和文字 */
+.banner-content {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    z-index: 2; /* 文字和人物图片位于上层 */
+    width: 100%;
+    padding-left: 10%; /* 使内容稍微偏左，避免与边缘太近 */
 }
 
-.Blog-area {
-    background-image: url(4.jpg);
+.person-image {
+    width: 25%; /* 人物图片占容器的 30% */
+    height: auto;
+    object-fit: cover;
+    margin-right: 150px; /* 保持人物图片和文字之间的距离 */
 }
 
-.contact-area {
-    background-image: url(5.jpg);
+/* 文字部分 */
+.text-part {
+    max-width: 70%; /* 控制文字部分的最大宽度 */
 }
 
+/* 文字样式 */
+h1 {
+    font-size: 50px;
+    font-family: "Champagne & Limousines";
+}
+
+p {
+    font-size: 24px;
+    padding-top: 10px;
+    line-height: 1.6;
+    padding-right: 15%;
+}
 
 /* 添加占位伪元素来解决跳转位置问题 */
 .about-area::before,
@@ -99,31 +119,19 @@ a:hover {
     margin-top: -100px; /* 抵消高度，确保跳转到正确位置 */
 }
 
-.text-part {
-    padding-left: 40px;
-    width: 90%;
-    height: 80%;
-}
-
-h1 {
-    font-size: 50px;
-    font-family: "Champagne & Limousines";
-}
-
-p {
-    font-size: 24px;
-    line-height: 50px;
-}
-
+/* 其它区域样式保持不变 */
 .about-area,
-.Blog-area {
-    background-color: #fefefe; /* 保留为后备颜色 */
-}
-
 .port-area,
+.Blog-area,
 .contact-area {
-    background-color: #262626; /* 保留为后备颜色 */
-    color: #fff;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+    height: 100vh; /* 确保这些区域占满屏幕 */
 }
 
 html {
